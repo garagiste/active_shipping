@@ -6,6 +6,7 @@ module ActiveShipping
   # Documentation can be found here: http://images.fedex.com/us/developer/product/WebServices/MyWebHelp/PropDevGuide.pdf
   class FedEx < Carrier
     self.retry_safe = true
+    self.ssl_version = :TLSv1_2
 
     cattr_reader :name
     @@name = "FedEx"
