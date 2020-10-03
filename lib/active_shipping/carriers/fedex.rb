@@ -716,6 +716,7 @@ module ActiveShipping
     end
 
     def commit(request, test = false)
+      Rails.logger.info "⚾️ #{OpenSSL::X509::DEFAULT_CERT_DIR}"
       ssl_post(test ? TEST_URL : LIVE_URL, request.gsub("\n", ''))
     end
 
